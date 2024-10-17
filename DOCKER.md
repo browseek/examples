@@ -10,7 +10,7 @@ This guide provides instructions on how to start the Browseek library using Dock
 
 1. Clone the Browseek repository:
    ```
-   git clone https://github.com/yourusername/browseek.git
+   git clone https://github.com/browseek-com/browseek.git
    ```
 
 2. Navigate to the project directory:

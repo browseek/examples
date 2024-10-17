@@ -1,0 +1,6 @@
+# Python dependencies
+playwright==1.35.0
+
+# Node.js dependencies (install with npm)
+# playwright
+# dotenv
