@@ -1,0 +1,39 @@
+---
+- name: Run E2E tests
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+
+  tasks:
+    - name: Run Playwright tests
+      command: npm run test:playwright
+      args:
+        chdir: "{{ playbook_dir }}/playwright"
+      register: playwright_result
+      ignore_errors: yes
+
+    - name: Run Puppeteer tests
+      command: npm run test:puppeteer
+      args:
+        chdir: "{{ playbook_dir }}/puppeteer"
+      register: puppeteer_result
+      ignore_errors: yes
+
+    - name: Run Selenium tests
+      command: npm run test:selenium
+      args:
+        chdir: "{{ playbook_dir }}/selenium"
+      register: selenium_result
+      ignore_errors: yes
+
+    - name: Display test results
+      debug:
+        msg: 
+          - "Playwright tests: {{ 'Passed' if playwright_result.rc == 0 else 'Failed' }}"
+          - "Puppeteer tests: {{ 'Passed' if puppeteer_result.rc == 0 else 'Failed' }}"
+          - "Selenium tests: {{ 'Passed' if selenium_result.rc == 0 else 'Failed' }}"
+
+    - name: Check if all tests passed
+      fail:
+        msg: "Some tests failed. Please check the output above."
+      when: playwright_result.rc != 0 or puppeteer_result.rc != 0 or selenium_result.rc != 0
