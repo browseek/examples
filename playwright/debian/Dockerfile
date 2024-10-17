@@ -11,10 +11,10 @@ WORKDIR /app
 COPY install.sh .
 
 # Make the script executable
-RUN chmod +x install.sh
+RUN chmod +x install_drivers.sh
 
 # Run the installation script
-RUN ./install.sh
+RUN ./install_drivers.sh
 
 # Copy your application files
 COPY . .

@@ -30,7 +30,8 @@ pip install -r requirements.txt
 # Install browser drivers
 install_driver() {
     local driver=$1
-    local driver_path="drivers/$driver/$OS/$ARCH"
+#    local driver_path="drivers/$driver/$OS/$ARCH"
+    local driver_path="drivers/$driver/$OS"
     if [ -f "$driver_path/install.sh" ]; then
         echo "Installing $driver driver..."
         bash "$driver_path/install.sh"
