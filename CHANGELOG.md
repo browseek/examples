@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.1] - 2024-10-17
+## [0.1.2] - 2024-10-17
+
+## [0.1.2] - 2024-10-17
+
 ### Added
 - New documentation files:
   - EXAMPLES.md with code samples for each tool
@@ -25,7 +28,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Testing enhancements:
   - Created e2e_tests.yml for Ansible end-to-end tests
   - Developed test.sh script to run Ansible e2e tests
-
+- Version control and deployment:
+  - Created update.sh script to automate version bumping, changelog updates, and pushing changes to the server
+  
 ### Changed
 - Code improvements:
   - Replaced hardcoded "https://example.com" with TEST_URL variable in all main.js files
@@ -38,7 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Driver installation enhancements:
   - Improved Edge driver installation script to use a more reliable method for obtaining the latest version
 
-## [0.2.0] - 2024-10-17
+## [0.1.1] - 2024-10-17
 ### Added
 - Created main.js files for Playwright, Puppeteer, and Selenium
 - Added basic test examples in each main.js file
